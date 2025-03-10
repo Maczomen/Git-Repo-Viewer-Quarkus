@@ -4,6 +4,15 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
+## Before you start
+
+To run this project set env variable `GIT_AUTH_TOKEN` to your git auth token or comment out lines:
+```java
+@ClientHeaderParam(name = HttpHeaders.AUTHORIZATION, value = "Bearer ${env.GIT_AUTH_TOKEN}")
+```
+in files `GitBranchClient.java` and `GitRepositoryClient.java`.
+
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -56,11 +65,5 @@ If you want to learn more about building native executables, please consult <htt
 ## Related Guides
 
 - REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-
-## Provided Code
-
-### REST
-
-Easily start your REST Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
